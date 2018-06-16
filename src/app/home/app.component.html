@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="clearfix">
+  <aside>
+    <div class="list" >
+      <ul>
+        <li *ngFor="let item of deck; let i = index;"  class="row">
+          <button (click)="bringItem(item)">{{item}}</button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <div class="inner clearfix">
+      <div class="img">
+        <img [src]="gateway.imgsrc" />
+      </div>
+      <h1>{{ gateway.results.name }}</h1>
+      {{ gateway.results.text }}
+    </div>
+  </main>
+</div>
