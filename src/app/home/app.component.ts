@@ -8,6 +8,9 @@ import { Gateway } from "../services/gateway.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  showList:boolean = false;
+  private loading: boolean = false;
+  private activeItem:string;
 
   deck = [
     "Burial from a Different Dimension",
