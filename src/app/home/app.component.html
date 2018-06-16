@@ -32,11 +32,14 @@
           </path>
         </svg>
       </div>
-      <div class="img">
-        <img [src]="gateway.imgsrc" />
-      </div>
       <h1>{{ gateway.results.name }}</h1>
-      {{ gateway.results.text }}
+      <div class="content">
+        <div class="img">
+          <img [src]="gateway.imgsrc" />
+        </div>
+
+          {{ gateway.results.text }}
+      </div>
     </div>
   </main>
 </div>
