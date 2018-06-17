@@ -8,6 +8,12 @@ import { Gateway } from "../services/gateway.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  content = {
+    title:"",
+    imgsrc:"",
+    text:""
+  }
+
   showList:boolean = false;
   private loading: boolean = false;
   private activeItem:string;
@@ -45,12 +51,25 @@ export class AppComponent implements OnInit {
     this.showList = (state==1)?true:false;
   };
 
+  private setDefaults(){
+    this.content = {
+      title:"",
+      imgsrc:"",
+      text:""
+    }
+  }
+
   private bringItem(item:string){
     this.loading = true;
-    this.gateway.results = [];
-    this.gateway.imgsrc = "";
+    this.setDefaults();
     this.activeItem = item;
     this.gateway.getCardData(item).then(()=>{
+
+      this.content = {
+        title:this.gateway.results.name,
+        imgsrc:this.gateway.imgsrc,
+        text:this.gateway.results.text
+      }
        this.loading = false;
     });
 

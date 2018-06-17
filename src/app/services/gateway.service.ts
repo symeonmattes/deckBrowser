@@ -4,9 +4,7 @@ import { Http, RequestOptions, Response } from '@angular/http';
 import 'rxjs';
 
 
-const NUM_HTTP_RETRIES = 3;
 const BASEURL = "http://52.57.88.137";
-const TAG="HermesvGateway";
 const ACTIONS = {
   GETCARDDATA:"/api/card_data/{cardName}",
   IMGSRC:"/api/card_image/{cardName}"
@@ -16,8 +14,11 @@ const ACTIONS = {
 })
 export class Gateway {
 
-  results:Object[]=[];
-  imgsrc:String = "";
+  results={
+    "name": "",
+    "text": ""
+  };
+  imgsrc:string = "";
 
   constructor(private http: Http) { }
 
@@ -36,7 +37,8 @@ export class Gateway {
       .toPromise()
       .then(
         res => { //Success
-          this.results = res.json().data;
+          this.results.name = res.json().data.name;
+          this.results.text = res.json().data.text;
           this.imgsrc = this.getImgSrc(cardName);
           resolve();
         },
