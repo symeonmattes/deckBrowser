@@ -2,9 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+This means that you need nodejs (v8.11.3) and npm (node package manager, 6.1.0). To install the angular cli package manager run `npm install @angular/cli -g`. When finished type `ng -v` to give you the current version (6.0.8).
+
+# Github
+
+The application exists in github and you can download it by typing:
+
+`git clone https://github.com/symeonmattes/deckBrowser.git`
+
+Then go to the folder `cd deckBrowser` and type:
+
+`npm install npm-install-all`
+
+to install all nodejs modules.
+
 ## Development server
 
-Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Go to the angular folder and Run `ng serve --open` for a dev server. This will open automatically a browser. Alternatively you can navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Furthermore the application has been uploaded to a private server and you could also see it by typing:
+
+http://deckbrowser.dev.smattes.com/
 
 ## Running unit tests
 
