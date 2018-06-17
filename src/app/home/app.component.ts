@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
   }
 
   showList:boolean = false;
-  private loading: boolean = false;
-  private activeItem:string;
+  loading: boolean = false;
+  activeItem:string;
 
   deck = [
     "Burial from a Different Dimension",
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
       this.activeItem = this.deck[0];
       this.bringItem(this.deck[0]);
   }
-  private changeMenuState(state:number){
+  public changeMenuState(state:number){
     this.showList = (state==1)?true:false;
   };
 
